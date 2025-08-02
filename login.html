@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Datang - Peta Jalan Keuangan</title>
+    <link rel="stylesheet" href="login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <div class="split-container">
+      <!-- Kolom Kiri - Visual -->
+      <div class="left-pane">
+        <img src="images/finance.png" alt="3D Finance Icon" />
+        <h2>TANGGA KEUANGAN</h2>
+        <p>Catat Finansial Anda.</p>
+      </div>
+
+      <!-- Kolom Kanan - Form -->
+      <div class="right-pane">
+        <!-- Form Login (Tampil secara default) -->
+        <div class="form-container" id="login-container">
+          <header class="login-header">
+            <h1>Selamat Datang!</h1>
+            <p>Masukkan username Anda untuk melanjutkan.</p>
+          </header>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-username">Username</label>
+              <input
+                type="text"
+                id="login-username"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Kata Sandi</label>
+              <input
+                type="password"
+                id="login-password"
+                class="form-input"
+                required
+              />
+            </div>
+            <div id="login-message" class="message-container"></div>
+            <button type="submit" class="auth-btn primary">Masuk</button>
+          </form>
+          <p class="toggle-link">
+            Belum punya akun? <a href="#" id="show-signup">Daftar di sini</a>
+          </p>
+        </div>
+
+        <!-- Form Daftar (Tersembunyi secara default) -->
+        <div class="form-container hidden" id="signup-container">
+          <header class="login-header">
+            <h1>Buat Akun Baru</h1>
+            <p>Hanya butuh beberapa detik untuk memulai.</p>
+          </header>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup-username">Username</label>
+              <input
+                type="text"
+                id="signup-username"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Alamat Email</label>
+              <input
+                type="email"
+                id="signup-email"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Kata Sandi</label>
+              <input
+                type="password"
+                id="signup-password"
+                class="form-input"
+                placeholder="Minimal 6 karakter"
+                required
+              />
+            </div>
+            <div id="signup-message" class="message-container"></div>
+            <button type="submit" class="auth-btn primary">Buat Akun</button>
+          </form>
+          <p class="toggle-link">
+            Sudah punya akun? <a href="#" id="show-login">Masuk di sini</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="auth.js"></script>
+  </body>
+</html>

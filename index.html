@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tangga Keuangan</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  </head>
+  <body>
+    <!-- Header "Dynamic Island" -->
+    <header class="header">
+      <h1 id="main-header-title">Tangga Keuangan</h1>
+    </header>
+
+    <!-- Kontainer Utama Aplikasi -->
+    <div class="app-container">
+      <main class="main-layout">
+        <!-- KOLOM KIRI: NAVIGASI TANGGA KEUANGAN -->
+        <aside id="financial-ladder" class="financial-ladder">
+          <!-- Navigasi akan di-generate oleh JavaScript -->
+        </aside>
+
+        <!-- KOLOM KANAN: KONTEN DINAMIS -->
+        <section id="dashboard-content" class="dashboard-content">
+          <!-- Seluruh konten di sini akan di-generate oleh JavaScript -->
+        </section>
+      </main>
+    </div>
+
+    <!-- MODAL UNTUK MENAMBAH PROGRES -->
+    <div id="progress-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-modal-btn" id="close-modal-btn">×</button>
+        <h2 class="update-title">⚡ Catat Progres Keuangan</h2>
+        <form id="progress-form">
+          <div class="form-group">
+            <label for="progress-amount">Jumlah Progres (Rp)</label
+            ><input
+              type="number"
+              id="progress-amount"
+              class="form-input"
+              placeholder="Contoh: 2000000"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="progress-category">Alokasikan ke Tangga</label
+            ><select
+              id="progress-category"
+              class="form-input"
+              required
+            ></select>
+          </div>
+          <div class="form-group">
+            <label for="progress-date">Tanggal Progres</label
+            ><input
+              type="date"
+              id="progress-date"
+              class="form-input"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="progress-notes">Catatan (Opsional)</label
+            ><input
+              type="text"
+              id="progress-notes"
+              class="form-input"
+              placeholder="Contoh: Bonus akhir tahun"
+            />
+          </div>
+          <button type="submit" class="bulk-btn">💾 Simpan Progres</button>
+        </form>
+      </div>
+    </div>
+    <div id="confirm-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h2
+          id="confirm-title"
+          class="update-title"
+          style="font-size: 1.5rem; margin-bottom: 20px"
+        >
+          Konfirmasi Tindakan
+        </h2>
+        <p
+          id="confirm-text"
+          style="text-align: center; color: #cbd5e1; margin-bottom: 30px"
+        >
+          Apakah Anda yakin?
+        </p>
+        <div class="button-group">
+          <button id="confirm-cancel-btn" class="auth-btn secondary">
+            Batal
+          </button>
+          <button
+            id="confirm-ok-btn"
+            class="auth-btn primary"
+            style="background: linear-gradient(135deg, #f87171, #ef4444)"
+          >
+            Ya, Hapus
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
